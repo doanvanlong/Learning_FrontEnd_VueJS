@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .do{
+            background-color: red;
+            width:100px;
+            height:100px;
+        }
+        .xanh{
+            background-color:green;
+        }
+        .vang{
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div style="display:flex;justify-content:space-around">
+        <div class="vang" @click="quanlydo=!quanlydo" :class="{do:quanlydo}">2</div>
+        <div class="vang" :class="{do:quanlydo}">2</div>
+        <div class="xanh">2</div>
+        <div class="" :style="[ab,{backgroundColor : color}]">2</div>
+
+        <div :class="color">2</div>
+       </div>
+
+        <input v-model="color"></input>
+    </div>
+    <script>
+        // có thể viết Js trong style html
+        new Vue({
+            el:'#app',
+            data:{
+                quanlydo:false,
+                color:'vang'
+            },
+            computed:{
+               ab:function(){
+                   return {
+                       width:'100px'
+                   }
+               }
+            }
+            
+        })
+    </script>
+</body>
+</html>

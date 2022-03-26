@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <ul>
+           <li v-for="(user,i) in users">{{user}} với index {{i}}</li>
+       </ul>
+       <ul>
+           <li v-for="student in students">
+               <div v-for="(value,key) in student">{{value}} key {{key}}</div>
+           </li>
+       </ul>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                users:['long','doan','tuan'],
+                students:[
+                    {name:'Long',age:4,addres:'Quang nam'},
+                    {name:'A',age:24,addres:'Quang nam'},
+                    {name:'B',age:46,addres:'Quang nam'},
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

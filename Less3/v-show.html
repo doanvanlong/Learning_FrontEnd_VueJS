@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Bạn đang học phải ko?</h1>
+        <h4 v-if="check">Tôi đang học</h4>
+        <h4 v-else>Tôi đang ngủ</h4>
+        <button @click="check=!check">Thay đổi</button>
+        <p v-show="check">Alo</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                check:true
+            }
+        })
+    </script>
+</body>
+</html>
